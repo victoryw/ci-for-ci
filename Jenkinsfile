@@ -1,27 +1,31 @@
 node {
-    println "current space is ${PWD}"
+    stages {
+        stage('monitor the clamin dependence to others') {
+            steps {                
+                jobDsl scriptText: '''job(\'clamin dependence to others\') {
+                    scm {
+                        git(\'git://github.com/quidryan/aws-sdk-test.git\')
+                    }
+                    triggers {
+                        scm(\'H/15 * * * *\')
+                    }
+                    steps {
+                        sh('replay a.exe'')
+                    }
+                }'''
 
-    jobDsl scriptText: '''job(\'DSL-Tutorial-1-Test-2\') {
-    scm {
-        git(\'git://github.com/quidryan/aws-sdk-test.git\')
+                jobDsl scriptText: '''job(\'others dependence to clamin\') {
+                    scm {
+                        git(\'git://github.com/quidryan/aws-sdk-test.git\')
+                    }
+                    triggers {
+                        scm(\'H/15 * * * *\')
+                    }
+                    steps {
+                        sh('replay a.exe'')
+                    }
+                }'''
+            }
+        }
     }
-    triggers {
-        scm(\'H/15 * * * *\')
-    }
-    steps {
-        sh('replay a.exe'')
-    }
-    }'''
-
-    jobDsl scriptText: '''job(\'DSL-Tutorial-1-Test-3\') {
-    scm {
-        git(\'git://github.com/quidryan/aws-sdk-test.git\')
-    }
-    triggers {
-        scm(\'H/15 * * * *\')
-    }
-    steps {
-        sh('replay a.exe'')
-    }
-    }'''
 }
