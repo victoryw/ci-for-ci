@@ -1,6 +1,5 @@
 node {
     stage('monitor the clamin dependence to others') {
-    steps {                
         jobDsl scriptText: '''job(\'clamin dependence to others\') {
             scm {
                 git(\'git://github.com/quidryan/aws-sdk-test.git\')
@@ -25,5 +24,4 @@ node {
             }
         }'''
     }
-}
 }
