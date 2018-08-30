@@ -1,5 +1,5 @@
 node {
-    echo envVars
+    echo env.WORKSPACE
     jobDsl scriptText: '''job(\'DSL-Tutorial-1-Test-2\') {
     scm {
         git(\'git://github.com/quidryan/aws-sdk-test.git\')
