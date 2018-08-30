@@ -1,11 +1,19 @@
-job("DSL-Tutorial-1-Test-2") {
-        scm {
-            git("git://github.com/quidryan/aws-sdk-test.git")
+pipelineJob('test-jekinsfile_converted') {
+  description('')
+  
+  displayName('test-jekinsfile_converted')
+  scm {
+    git('https://github.com/victoryw/test-jekinsfile.git')
+  }
+  definition {
+      cpsScm {
+          scm {
+              git('https://github.com/victoryw/test-jekinsfile.git')
+          }
         }
-        triggers {
-            scm("H/15 * * * *")
-        }
-        steps {
-            maven("-e clean test")
-        }
+  }
+
+  triggers {
+      scm('*/2 * * * *')
+  }
 }
