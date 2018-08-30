@@ -1,3 +1,3 @@
 node {
-    jobDsl targets: ['jobs/demo.groovy'].join('\n')
+    jobDsl scriptText: 'job("DSL-Tutorial-1-Test-2") {steps {sh ("echo \'aa\'")}}'
 }
