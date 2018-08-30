@@ -1,9 +1,5 @@
 node {
-    println "${PWD}"
-    hudson.FilePath workspace = hudson.model.Executor.currentExecutor().getCurrentWorkspace()
-    workspace.list().each {
-        println "path is ${it}"
-    }
+    println "current space is ${PWD}"
 
     jobDsl scriptText: '''job(\'DSL-Tutorial-1-Test-2\') {
         println readFileFromWorkspace('jobs/demo.dsl.groovy')
