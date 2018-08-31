@@ -5,10 +5,10 @@ node {
                 git(\'git://github.com/quidryan/aws-sdk-test.git\')
             }
             triggers {
-                scm(\'H/15 * * * *\')
+                scm(\'H/5 * * * *\')
             }
             steps {
-                shell(\'replay a.exe\')
+                shell(\'replay1 a.exe\')
             }
         }'''
 
@@ -20,7 +20,7 @@ node {
                 scm(\'H/15 * * * *\')
             }
             steps {
-                sh(\'replay a.exe\')
+                shell(\'replay a.exe\')
             }
         }'''
     }
