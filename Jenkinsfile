@@ -24,10 +24,11 @@ node {
             }
         }'''
 
-        jobDsl scriptText: '''job(\'others dependence to clamin\') {
+        jobDsl scriptText: '''job(\'confidential-jekins-job-dsl\') {
             scm {
-                git(\'https://github.com/victoryw/confidential-jenkins-job-dsl.git\') {
+                git {
                     remote {
+                        url(\'https://github.com/victoryw/confidential-jenkins-job-dsl.git\')
                         credentials(\'github-for-victoryw\')
                     }
                 }
