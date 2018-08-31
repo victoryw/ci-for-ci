@@ -8,7 +8,7 @@ node {
                 scm(\'H/15 * * * *\')
             }
             steps {
-                sh(\'replay a.exe\')
+                shell(\'replay a.exe\')
             }
         }'''
 
