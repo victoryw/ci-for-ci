@@ -26,8 +26,12 @@ node {
 
         jobDsl scriptText: '''job(\'others dependence to clamin\') {
             scm {
-                git(\'https://github.com/victoryw/confidential-jenkins-job-dsl.git\')
-                credentials(\'github-for-victoryw\')
+                git {
+                    remote(\'https://github.com/victoryw/confidential-jenkins-job-dsl.git\')
+                    credentialsId(\'github-for-victoryw\')
+                }
+                
+                
             }
             triggers {
                 scm(\'H/15 * * * *\')
