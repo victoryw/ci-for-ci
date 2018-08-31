@@ -1,7 +1,7 @@
 job = pipelineJob('split-file-test-1')
 job.with {
     description('')
-    displayName('test-jekinsfile_converted')
+    displayName('split-file-test-1')
     
     scm {
         git('https://github.com/victoryw/test-jekinsfile.git')
