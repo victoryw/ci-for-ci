@@ -1,4 +1,4 @@
-job = pipelineJob('test-jekinsfile-test-1')
+job = pipelineJob('split-file-test-1')
 job.with {
     description('')
     displayName('test-jekinsfile_converted')
