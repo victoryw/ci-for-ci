@@ -37,7 +37,7 @@ node {
                 scm(\'H/15 * * * *\')
             }
             steps {
-                shell(\'test.sh\')
+                shell(\'./test.sh\')
             }
         }'''
     }
