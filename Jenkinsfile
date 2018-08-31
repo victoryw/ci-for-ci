@@ -4,8 +4,6 @@ node {
     }
 
     stage('monitor the clamin dependence to others') {
-        jobDsl targets:['./jobs/**/*.groovy'].join('\n')
-
         jobDsl scriptText: '''job(\'clamin dependence to others\') {
             scm {
                 git(\'git://github.com/quidryan/aws-sdk-test.git\')
@@ -46,5 +44,7 @@ node {
                 shell(\'./test.sh\')
             }
         }'''
+
+        jobDsl targets:['./jobs/**/*.groovy'].join('\n')
     }
 }
