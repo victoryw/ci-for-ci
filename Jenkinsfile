@@ -1,7 +1,11 @@
 node {
+    stage('CHECKOUT') {
+        git  url: 'https://github.com/victoryw/ci-for-ci.git'
+    }
+
     stage('monitor the clamin dependence to others') {
         jobDsl targets:['./jobs/**/*.groovy'].join('\n')
-        
+
         jobDsl scriptText: '''job(\'clamin dependence to others\') {
             scm {
                 git(\'git://github.com/quidryan/aws-sdk-test.git\')
